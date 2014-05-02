@@ -71,14 +71,14 @@ class Course < ActiveRecord::Base
   #When assigning teaching assistants to a page, the user types in a series of strings that then need to be processed
   # :teaching_assistants_override is a temporary variable that is used to do validation of the strings (to verify
   # that they are people in the system) and then to save the people in the course_teaching_assistants association.
-  #attr_accessor :course_teaching_assistants_override
+  attr_accessor :course_teaching_assistants_override
 
   attr_accessible :course_number_id, :name, :number, :semester, :mini, :primary_faculty_label,
                   :secondary_faculty_label, :twiki_url, :remind_about_effort, :short_name, :year,
                   :peer_evaluation_first_email, :peer_evaluation_second_email,
                   :curriculum_url, :configure_course_twiki,
-                  :faculty_assignments_override
-                  #:course_teaching_assistants_override
+                  :faculty_assignments_override,
+                  :course_teaching_assistants_override
 
   include PeopleInACollection
 
