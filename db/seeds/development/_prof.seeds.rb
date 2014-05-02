@@ -62,4 +62,12 @@ FactoryGirl.define do
     email "severus.snape@sv.cmu.edu"
   end
 
+  factory :prof_duran, :parent => :prof do
+    twiki_name "JasonDuran"
+    first_name "Jason"
+    last_name "Duran"
+    human_name "Jason Duran"
+    email "jason.duran@sv.cmu.edu"
+  end
+
 end

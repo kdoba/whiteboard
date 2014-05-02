@@ -6,7 +6,6 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-
 require 'factory_girl'
 
 FactoryGirl.define do
@@ -98,19 +97,19 @@ FactoryGirl.define do
   end
 
 
-  factory :your_name_here, :parent => :person do
-    is_student 1
-    is_part_time 0
-    graduation_year "2012"
-    masters_program "SE"
-    masters_track "Tech"
-    twiki_name "FirstLast"
-    first_name "First"
-    last_name "Last"
-    human_name "Your Name"
-    email "your.email@sv.cmu.edu"
-    webiso_account "your.name@andrew.cmu.edu"
-  end
+ # factory :jason_duran, :parent => :person do
+ #   is_student 1
+ #   is_part_time 1
+ #   graduation_year "2015"
+ #   masters_program "SE"
+ #   masters_track "Tech"
+ #   twiki_name "JasonDuran"
+ #   first_name "Jason"
+ #   last_name "Duran"
+ #   human_name "Jason Duran"
+ #   email "jason.duran@sv.cmu.edu"
+ #   webiso_account "jduran@andrew.cmu.edu"
+ # end
 
 end
 
@@ -122,7 +121,7 @@ Factory(:task_type, :name => "Other")
 
 todd = Factory.create(:todd)
 ed = Factory.create(:ed)
-Factory.create(:your_name_here)
+#Factory.create(:jason_duran)
 Factory.create(:team_terrific) #This will create awe_smith, betty_ross, and charlie_moss
 
 FactoryGirl.create(:presentation_feedback_questions, :label => "Content", :text => "Did the talk cover all the content suggested on the checklist? (ie goals, progress, and the process for achieving the goals, outcomes)")

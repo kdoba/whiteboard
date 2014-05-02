@@ -44,17 +44,17 @@ FactoryGirl.define do
     webiso_account "jmirizio@andrew.cmu.edu"
   end
 
-  factory :jason_duran, :parent => :person do
+  factory :jason_durant, :parent => :person do
     is_student 1
     is_part_time 1
     graduation_year "2015"
     masters_program "SE"
     masters_track "Tech"
-    twiki_name "JasonDuran"
+    twiki_name "JasonDurant"
     first_name "Jason"
-    last_name "Duran"
-    human_name "Jason Duran"
-    email "jason.duran@sv.cmu.edu"
+    last_name "Durant"
+    human_name "Jason Durant"
+    email "jason.durant@sv.cmu.edu"
     webiso_account "jduran@andrew.cmu.edu"
   end
 
@@ -335,7 +335,7 @@ end
 Factory.create(:adam_blazczak)
 Factory.create(:rohit_kabadi)
 Factory.create(:joe_mirizio)
-Factory.create(:jason_duran)
+Factory.create(:jason_durant)
 Factory.create(:khoa_doba)
 Factory.create(:jacob_wu)
 Factory.create(:hyo_jeong)

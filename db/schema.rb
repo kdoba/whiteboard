@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140124184429) do
+ActiveRecord::Schema.define(:version => 20140502092217) do
 
   create_table "assignments", :force => true do |t|
     t.string   "name"
@@ -188,6 +188,16 @@ ActiveRecord::Schema.define(:version => 20140124184429) do
 
   add_index "faculty_assignments", ["course_id", "user_id"], :name => "index_faculty_assignments_on_course_id_and_person_id", :unique => true
   add_index "faculty_assignments", ["course_id"], :name => "index_faculty_assignments_on_course_id"
+
+  create_table "course_teaching_assistants", :id => false, :force => true do |t|
+    t.integer  "course_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "course_teaching_assistants", ["course_id", "user_id"], :name => "index_course_teaching_assistants_on_course_id_and_person_id", :unique => true
+  add_index "course_teaching_assistants", ["course_id"], :name => "index_course_teaching_assistants_on_course_id"
 
   create_table "grades", :force => true do |t|
     t.integer  "course_id"
