@@ -104,7 +104,7 @@ FactoryGirl.define do
       course.grading_rule = FactoryGirl.create(:grading_rule_points)
 
       course.faculty = []
-      course.faculty << FactoryGirl.create(:prof_zhang)
+      course.faculty << FactoryGirl.create(:jacob_wu)
 
       course.teams = []
       course.teams << FactoryGirl.create(:team_1)

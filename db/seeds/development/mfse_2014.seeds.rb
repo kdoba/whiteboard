@@ -72,19 +72,19 @@ FactoryGirl.define do
     webiso_account "kdoba@andrew.cmu.edu"
   end
 
-  factory :jacob_wu, :parent => :person do
-    is_student 1
-    is_part_time 1
-    graduation_year "2015"
-    masters_program "SE"
-    masters_track "Tech"
-    twiki_name "JacobWu"
-    first_name "Jacob"
-    last_name "Wu"
-    human_name "Jacob Wu"
-    email "jacob.wu@sv.cmu.edu"
-    webiso_account "yuanjiaw@andrew.cmu.edu"
-  end
+  #factory :jacob_wu, :parent => :person do
+  #  is_student 1
+  #  is_part_time 1
+  #  graduation_year "2015"
+  #  masters_program "SE"
+  #  masters_track "Tech"
+  #  twiki_name "JacobWu"
+  #  first_name "Jacob"
+  #  last_name "Wu"
+  #  human_name "Jacob Wu"
+  #  email "jacob.wu@sv.cmu.edu"
+  #  webiso_account "yuanjiaw@andrew.cmu.edu"
+  #end
 
   factory :hyo_jeong, :parent => :person do
     is_student 1
@@ -337,7 +337,7 @@ Factory.create(:rohit_kabadi)
 Factory.create(:joe_mirizio)
 Factory.create(:jason_duran)
 Factory.create(:khoa_doba)
-Factory.create(:jacob_wu)
+#Factory.create(:jacob_wu)
 Factory.create(:hyo_jeong)
 Factory.create(:harikumar_kumar_sulochana)
 Factory.create(:grace_lee)

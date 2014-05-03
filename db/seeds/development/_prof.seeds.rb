@@ -6,6 +6,14 @@ FactoryGirl.define do
     is_staff 1
   end
 
+  factory :jacob_wu, :parent => :prof do
+    first_name "Jacob"
+    last_name "Wu"
+    human_name "Jacob Wu"
+    twiki_name "JacobWu"
+    email "jacob.wu@sv.cmu.edu"
+  end
+
   factory :prof_liu, :parent => :prof do
     first_name "YC"
     last_name "Liu"
