@@ -2,6 +2,7 @@ class Team < ActiveRecord::Base
   belongs_to :course
   belongs_to :primary_faculty, :class_name => 'User', :foreign_key => "primary_faculty_id"
   belongs_to :secondary_faculty, :class_name => 'User', :foreign_key => "secondary_faculty_id"
+  belongs_to :ta_id, :class_name => 'User', :foreign_key => "ta_id"
 
   has_many :team_assignments
   has_many :members, :through => :team_assignments, :source => :user

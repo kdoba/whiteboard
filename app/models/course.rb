@@ -42,6 +42,8 @@ class Course < ActiveRecord::Base
   has_many :faculty_assignments
   has_many :faculty, :through => :faculty_assignments, :source => :user
 
+  has_many :course_teaching_assistants, :through => :course_teaching_assistants, :source => :user
+
   has_many :registrations
   has_many :registered_students, :through => :registrations, :source => :user
 
@@ -55,6 +57,7 @@ class Course < ActiveRecord::Base
 
   validates_presence_of :semester, :year, :mini, :name
   validate :validate_faculty_assignments
+  validate :validate_course_teaching_assistants
 
   versioned
   belongs_to :updated_by, :class_name => 'User', :foreign_key => 'updated_by_user_id'
@@ -65,16 +68,26 @@ class Course < ActiveRecord::Base
   # that they are people in the system) and then to save the people in the faculty association.
   attr_accessor :faculty_assignments_override
 
+  #When assigning teaching assistants to a page, the user types in a series of strings that then need to be processed
+  # :teaching_assistants_override is a temporary variable that is used to do validation of the strings (to verify
+  # that they are people in the system) and then to save the people in the course_teaching_assistants association.
+  attr_accessor :course_teaching_assistants_override
+
   attr_accessible :course_number_id, :name, :number, :semester, :mini, :primary_faculty_label,
                   :secondary_faculty_label, :twiki_url, :remind_about_effort, :short_name, :year,
                   :peer_evaluation_first_email, :peer_evaluation_second_email,
                   :curriculum_url, :configure_course_twiki,
-                  :faculty_assignments_override
+                  :faculty_assignments_override,
+                  :course_teaching_assistants_override
 
   include PeopleInACollection
 
   def validate_faculty_assignments
     validate_members :faculty_assignments_override
+  end
+
+  def validate_course_teaching_assistants
+    validate_members :course_teaching_assistants_override
   end
 
 #  def to_param

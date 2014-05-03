@@ -174,6 +174,7 @@ class TeamsController < ApplicationController
     if has_permissions_or_redirect(:staff, course_team_path(@course, @team))
       @team.course_id = params[:course_id]
       @faculty = @course.faculty
+      @ta = User.find(@team.ta_id)
     end
   end
 
@@ -209,6 +210,10 @@ class TeamsController < ApplicationController
     params[:team][:members_override] = params[:persons]
     @team = Team.find(params[:id])
     @course = @team.course
+    @ta = nil
+    if (!@team.ta_id.nil?)
+      @ta = User.find(@team.ta_id)
+    end
     if has_permissions_or_redirect(:staff, course_team_path(@course, @team))
 
       update_course_faculty_label
